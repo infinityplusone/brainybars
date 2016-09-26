@@ -1,0 +1,19 @@
+{
+  "name": "brainybars",
+  "version": "0.1.0",
+  "title": "BrainyBars",
+  "description": "A collection of useful helpers for handlebars.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/infinityplusone/brainybars.git"
+  },
+  "author": "Jonathan \"Yoni\" Knoll",
+  "license": "LicenseRed-README.md",
+  "main": "Gruntfile.js",
+  "private": true,
+  "devDependencies": {
+    "colors": "^1.1.2",
+    "grunt": "~0.4.5",
+    "lodash": "^4.14.0"
+  }
+}
