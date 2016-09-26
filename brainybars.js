@@ -22,6 +22,19 @@
  *
  */
 
+requirejs.config({
+  paths: {
+    // these come from bower
+    'handlebars':           'bower_components/handlebars/handlebars',
+    'lodash':               'bower_components/lodash/dist/lodash.min',
+    'lodash-inflection':    'bower_components/lodash-inflection/lib/lodash-inflection',
+    'moment':               'bower_components/moment/moment',
+
+    // these come from infinityplusone
+    'brainybars':            'bower_components/brainybars/brainybars'
+  }
+});
+
 define([
   'handlebars',
   './lib/array',
