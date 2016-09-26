@@ -31,8 +31,15 @@ requirejs.config({
     'moment':               'bower_components/moment/moment',
 
     // these come from infinityplusone
-    'brainybars':            'bower_components/brainybars/brainybars'
-  }
+    'brainybars':            'bower_components/brainybars'
+  },
+  packages: [
+    {
+      name: 'brainybars',
+      main: 'brainybars'
+    }
+  ]
+
 });
 
 define([
