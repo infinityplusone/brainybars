@@ -12,7 +12,7 @@ nc='\033[0m'$blackBG
 
 project=$(pwd | sed -e "s/.*\///g")
 branch=$(git rev-parse --abbrev-ref HEAD)
-reBump='^[0-9]+\.[0-9]+\.[0-9]+|patch|minor|major$'
+reBump='^([0-9]+\.[0-9]+\.[0-9]+|patch|minor|major)$'
 
 # if a bump was specified, bump the version and push that first
 if [ "$#" == 1 ]; then
@@ -20,6 +20,9 @@ if [ "$#" == 1 ]; then
     grunt bump:$1
     git commit -am "bump to v${version}"
     git push origin $branch
+  else
+    echo "\n${red}Fatal error: Invalid bump value!${nc}\n"
+    exit 1
   fi
 fi
 
