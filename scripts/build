@@ -10,12 +10,16 @@ red='\033[0;31m'$blackBG
 yellow='\033[1;33m'$blackBG
 nc='\033[0m'$blackBG
 
+project=$(pwd | sed -e "s/.*\///g")
 branch=$(git rev-parse --abbrev-ref HEAD)
 reBump='^[0-9]+\.[0-9]+\.[0-9]+|patch|minor|major$'
 
+# if a bump was specified, bump the version and push that first
 if [ "$#" == 1 ]; then
   if [[ $1 =~ $reBump ]]; then
     grunt bump:$1
+    git commit -am "bump to v${version}"
+    git push origin $branch
   fi
 fi
 
@@ -27,18 +31,20 @@ grunt build
 version=$(cat VERSION)
 
 # checkout a branch for this version
-git branch -D v${version}
-git checkout -b v${version}
+git checkout -bf v${version}
 
 # add the distribution file & push it
-git add brainybars.min.js
-git commit -am 'RELEASE v$version'
+git add ${project}.min.js
+git commit -am "v${version}"
 git push origin v${version} --force
+git tag v${version}
 
-# push to latest too
-git branch -D latest
-git co -b latest
-git push origin latest --force
+# remove "latest" tag on the remote & create a new local one
+git push origin :refs/tags/latest
+git tag -f latest
+
+# push up new tags
+git push origin --tags
 
 # cleanup
 rm -rf VERSION
