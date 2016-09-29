@@ -43,6 +43,7 @@ fi
 
 # checkout a branch for this version
 echo "Checking out ${cyan}latest${nc} branch for ${cyan}v${version}${nc}.\n"
+git branch -D latest
 git checkout -bf latest
 
 # add the distribution file & push it
