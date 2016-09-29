@@ -1,6 +1,6 @@
 {
   "name": "brainybars",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "title": "BrainyBars",
   "description": "A collection of useful helpers for handlebars.",
   "repository": {
@@ -10,10 +10,9 @@
   "authors": [
     "Jonathan \"Yoni\" Knoll"
   ],
-  "license": "LicenseRed-README.md",
+  "license": "MIT",
   "homepage": "https://github.com/infinityplusone/brainybars.git",
   "moduleType": [],
-  "private": true,
   "dependencies": {
     "handlebars": "^4.0.5",
     "lodash": "*",
@@ -25,6 +24,8 @@
     "**/.*",
     "node_modules",
     "bower_components",
+    "node_modules",
+    "scripts",
     "test",
     "tests",
     "tasks"

@@ -22,36 +22,16 @@
  *
  */
 
-requirejs.config({
-  paths: {
-    // these come from bower
-    'handlebars':           'bower_components/handlebars/handlebars',
-    'lodash':               'bower_components/lodash/dist/lodash.min',
-    'lodash-inflection':    'bower_components/lodash-inflection/lib/lodash-inflection',
-    'moment':               'bower_components/moment/moment',
-
-    // these come from infinityplusone
-    'brainybars':            'bower_components/brainybars'
-  },
-  packages: [
-    {
-      name: 'brainybars',
-      main: 'brainybars'
-    }
-  ]
-
-});
-
 define([
   'handlebars',
-  './lib/array',
+  './lib/collections',
   './lib/datetime',
   './lib/misc',
   './lib/operators',
   './lib/string'
-], function(Handlebars, arrayHelpers, datetimeHelpers, miscHelpers, operatorsHelpers, stringHelpers) {
+], function(Handlebars, collectionsHelpers, datetimeHelpers, miscHelpers, operatorsHelpers, stringHelpers) {
 
-  [arrayHelpers, datetimeHelpers, miscHelpers, operatorsHelpers, stringHelpers].forEach(function(helpers) {
+  [collectionsHelpers, datetimeHelpers, miscHelpers, operatorsHelpers, stringHelpers].forEach(function(helpers) {
     Handlebars.registerHelper(helpers);
   });
 
