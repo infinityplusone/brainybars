@@ -31,7 +31,7 @@ git branch -D v${version}
 git checkout -b v${version}
 
 # add the distribution file & push it
-git add hippo.min.js
+git add brainybars.min.js
 git commit -am 'RELEASE v$version'
 git push origin v${version} --force
 
