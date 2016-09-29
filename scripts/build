@@ -42,21 +42,18 @@ if [[ $bumped ]]; then
 fi
 
 # checkout a branch for this version
-echo "Checking out new branch for ${cyan}v${version}${nc}.\n"
-git checkout -bf v${version}
+echo "Checking out ${cyan}latest${nc} branch for ${cyan}v${version}${nc}.\n"
+git checkout -bf latest
 
 # add the distribution file & push it
-echo "Adding build file to version branch and pushing to remote.\n"
+echo "Adding build file to latest branch and pushing to remote.\n"
 git add ${project}.min.js
 git commit -am "v${version}"
-git push origin v${version} --force
-
-echo "Creating new tag for ${cyan}v${version}${nc} and updating ${cyan}latest${nc} tag.\n"
-git tag v${version}
+git push origin latest --force
 
 # remove "latest" tag on the remote & create a new local one
-git push origin :refs/tags/latest
-git tag -f latest
+echo "Creating new tag for ${cyan}v${version}${nc} and pushing to remote.\n"
+git tag -f v${version}
 
 # push up new tags
 echo "Pushing tags up to remote.\n"
