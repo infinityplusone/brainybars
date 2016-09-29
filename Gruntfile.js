@@ -9,9 +9,11 @@
 
 module.exports = function(grunt) {
 
+  var pkg = grunt.file.readJSON('./package.json');
+
   // Project configuration
   grunt.initConfig({
-    pkg: grunt.file.readJSON('./package.json'),
+    pkg: pkg,
     requirejs: {
       compile: {
         options: {
