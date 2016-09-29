@@ -55,9 +55,9 @@ module.exports = function( grunt ) {
     });
 
     grunt.file.expand([
-      'Gruntfile.js',
+      '*.js',
       './tasks/**/*.js',
-      './src/**/*.js'
+      './lib/**/*.js'
     ]).forEach(function(f) {
       var lines = grunt.file.read(f).split('\n');
       var newLines = [];
@@ -81,7 +81,7 @@ module.exports = function( grunt ) {
 
     var readMe = grunt.file.read('README.md');
 
-    grunt.file.write('README.md', readMe.replace(/(# brain v).*/, '$1' + version));
+    grunt.file.write('README.md', readMe.replace(/(# BrainyBars v).*/, '$1' + version));
 
   });
 
