@@ -1,6 +1,6 @@
 {
   "name": "brainybars",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "title": "BrainyBars",
   "description": "A collection of useful helpers for handlebars.",
   "repository": {

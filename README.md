@@ -1,1 +1,1 @@
-# BrainyBars v0.5.1
+# BrainyBars v0.6.0
