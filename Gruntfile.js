@@ -2,8 +2,8 @@
  * BrainyBars Gruntfile
  *
  * Author(s):  Jonathan "Yoni" Knoll
- * Version:    0.7.0
- * Date:       2017-02-17
+ * Version:    0.8.0
+ * Date:       2017-02-20
  *
  */
 
